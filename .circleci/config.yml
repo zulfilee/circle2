@@ -1,0 +1,29 @@
+# Golang CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-go/ for more details
+version: 2
+jobs:
+  build:
+    machine :
+
+    working_directory: /go/src/github.com/circle2
+    environment:
+      GOPATH=/go
+    steps:
+      - checkout
+
+      - run: echo "Starting Build - $CIRCLE_BUILD_NUM"
+
+      - run: 
+          command: | 
+            cd webserver
+            go build main.go
+  	    ls
+
+      - run: cp webserver/main container1
+
+      - run: 
+          command: | 
+            cd iso
+   	    rm -f *.iso
+            mkisofs -o circle2.iso *
