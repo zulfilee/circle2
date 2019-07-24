@@ -38,4 +38,4 @@ jobs:
 workflows:
   "Circle Workflow":
     jobs:
-       - hello-build/hello-build
+       - build
