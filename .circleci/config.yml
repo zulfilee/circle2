@@ -16,7 +16,7 @@ jobs:
       USER_HOME=~
       GOPATH=${USER_HOME}/go
     steps:
-      - hello/hello-build
+      - hello-build/hello-build
       - checkout
 
       - run: echo "Starting Build - $CIRCLE_BUILD_NUM"
