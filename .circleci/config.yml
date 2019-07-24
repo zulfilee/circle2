@@ -7,15 +7,16 @@ jobs:
     machine : 
        image: ubuntu-1604:201903-01 
 
-    working_directory: /go/src/github.com/circle2
+    working_directory: ~/go/src/github.com/circle2
     environment:
-      GOPATH=/go
+      GOPATH=~/go
     steps:
       - checkout
 
       - run: echo "Starting Build - $CIRCLE_BUILD_NUM"
 
       - run: |
+            ls ~
             cd webserver
             go build main.go
             ls
