@@ -31,11 +31,12 @@ jobs:
       - run: |
             cd iso
             rm -f *.iso 
+   	    sudo apt-get update 
             sudo apt-get install -y mkisofs
             mkisofs -o circle2.iso *
 
 workflows:
   "Circle Workflow":
     jobs:
-       - build
        - hello-build/hello-build
+       - build
