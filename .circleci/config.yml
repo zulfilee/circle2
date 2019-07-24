@@ -14,16 +14,14 @@ jobs:
 
       - run: echo "Starting Build - $CIRCLE_BUILD_NUM"
 
-      - run: 
-          command: | 
+      - run: |
             cd webserver
             go build main.go
   	    ls
 
       - run: cp webserver/main container1
 
-      - run: 
-          command: | 
+      - run: |
             cd iso
    	    rm -f *.iso
             mkisofs -o circle2.iso *
