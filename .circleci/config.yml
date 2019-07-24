@@ -17,11 +17,11 @@ jobs:
       - run: |
             cd webserver
             go build main.go
-  	    ls
+            ls
 
       - run: cp webserver/main container1
 
       - run: |
             cd iso
    	    rm -f *.iso
-            mkisofs -o circle2.iso *
+             mkisofs -o circle2.iso *
