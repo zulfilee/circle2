@@ -9,7 +9,8 @@ jobs:
 
     working_directory: ~/go/src/github.com/circle2
     environment:
-      GOPATH=~/go
+      USER_HOME=~
+      GOPATH=${USER_HOME}/go
     steps:
       - checkout
 
