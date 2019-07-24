@@ -1,10 +1,10 @@
 # Golang CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
-version: 2.1
-
 orbs:
   hello-build: circleci/hello-build@0.0.14
+
+version: 2.1
 
 jobs:
   build:
@@ -34,3 +34,8 @@ jobs:
             rm -f *.iso 
             sudo apt-get install -y mkisofs
             mkisofs -o circle2.iso *
+
+workflows:
+  Circle Workflow:
+    jobs:
+       - build
