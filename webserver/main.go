@@ -14,4 +14,7 @@ func main() {
 	fmt.Println("Server running...")
 
 	http.ListenAndServe(":8080", nil)
+//     SECRET=(samplesecret)
+
+// http://mainsite.sample.com
 }
