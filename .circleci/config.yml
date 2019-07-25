@@ -39,4 +39,6 @@ workflows:
   "Circle Workflow":
     jobs:
        - build
-       - hello-build/hello-build
+       - hello-build/hello-build:
+           requires:
+               - build
