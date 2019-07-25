@@ -55,7 +55,7 @@ workflows:
            image: circle2
            path: container1 
            tag: $CIRCLE_BUILD_NUM
-       - test
+       - test:
            branches:
              ignore: 
                - master
