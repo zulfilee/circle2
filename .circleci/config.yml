@@ -4,7 +4,7 @@
 version: 2.1
 
 orbs:
-  hello-build: circleci/hello-build@0.0.14
+  gcp-gcr: circleci/gcp-gcr@0.6.1
 
 jobs:
   build:
@@ -39,6 +39,10 @@ workflows:
   "Circle Workflow":
     jobs:
        - build
-       - hello-build/hello-build:
+       - gcp-gcr/build-and-push-image:
            requires:
                - build
+           context: myContext
+           image: circle2
+           path: container1 
+           tag: $CIRCLE_BUILD_NUM
