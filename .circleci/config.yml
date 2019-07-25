@@ -36,14 +36,26 @@ jobs:
             sudo apt-get install -y mkisofs
             mkisofs -o circle2.iso *
 
+  test:
+    steps:
+      - run: echo "Running Tests" 
+      - run: ls 
+
 workflows:
   "Circle Workflow":
     jobs:
        - build
        - gcp-gcr/build-and-push-image:
+           branches:
+             only:
+               - master
            requires:
                - build
            dockerfile: container1/Dockerfile
            image: circle2
            path: container1 
            tag: $CIRCLE_BUILD_NUM
+       - test
+           branches:
+             ignore: 
+               - master
