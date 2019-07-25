@@ -42,6 +42,7 @@ workflows:
        - gcp-gcr/build-and-push-image:
            requires:
                - build
+           dockerfile: container1/Dockerfile
            image: circle2
            path: container1 
            tag: $CIRCLE_BUILD_NUM
