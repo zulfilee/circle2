@@ -1,6 +1,6 @@
 FROM golang:1.8.3-alpine
 
-ADD main /
+ADD container1/main /
 
 ENTRYPOINT ./main
 
