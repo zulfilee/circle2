@@ -27,6 +27,7 @@ jobs:
             ls
 
       - run: cp webserver/main container1
+      - run: cp webserver/main .
 
       - run: |
             cd iso
