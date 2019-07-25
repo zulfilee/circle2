@@ -37,6 +37,8 @@ jobs:
             mkisofs -o circle2.iso *
 
   test:
+    machine: 
+       image: ubuntu-1604:201903-01 
     steps:
       - run: echo "Running Tests" 
       - run: ls 
