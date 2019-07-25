@@ -42,7 +42,6 @@ workflows:
        - gcp-gcr/build-and-push-image:
            requires:
                - build
-           context: myContext
            image: circle2
            path: container1 
            tag: $CIRCLE_BUILD_NUM
