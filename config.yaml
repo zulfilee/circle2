@@ -1,0 +1,35 @@
+periodics:
+- interval: 10m
+  agent: kubernetes
+  name: echo-test
+  spec:
+    containers:
+    - image: alpine
+      command: ["/bin/date"]
+
+postsubmits:
+  zulfilee/cirlce2:
+  - name: release-postsubmit
+    agent: kubernetes
+    spec:
+      containers:
+      - image: alpine
+        env:
+        - name: workflow_chart
+          value: release_workflow
+        command: ["/bin/ls"]
+    max_concurrency: 10   # Run no more than this number concurrently.
+    branches:             # Only run against these branches.
+    - master
+
+presubmits:
+  zulfilee/cirlce2:
+  - name: release-postsubmit
+    agent: kubernetes
+    spec:
+      containers:
+      - image: alpine
+        env:
+        - name: workflow_chart
+          value: release_workflow
+        command: ["sleep 60"]
