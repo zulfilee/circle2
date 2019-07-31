@@ -14,3 +14,5 @@ Google Container / ISO upload
 
 Google uses bucket for Cntainer registry
 
+
+Trial for hub auto pr
