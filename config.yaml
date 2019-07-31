@@ -24,7 +24,7 @@ postsubmits:
 
 presubmits:
   zulfilee/circle2:
-  - name: release-postsubmit
+  - name: release-presubmit
     agent: kubernetes
     spec:
       containers:
