@@ -1,14 +1,14 @@
 periodics:
 - interval: 10m
   agent: kubernetes
-  name: echo-test
+  name: newecho-test
   spec:
     containers:
     - image: alpine
       command: ["/bin/date"]
 
 postsubmits:
-  zulfilee/cirlce2:
+  zulfilee/circle2:
   - name: release-postsubmit
     agent: kubernetes
     spec:
@@ -23,8 +23,8 @@ postsubmits:
     - master
 
 presubmits:
-  zulfilee/cirlce2:
-  - name: release-postsubmit
+  zulfilee/circle2:
+  - name: release-presubmit
     agent: kubernetes
     spec:
       containers:
