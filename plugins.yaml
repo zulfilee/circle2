@@ -16,3 +16,5 @@ plugins:
         # Applies a label to PRs with wip in the title to block merge
         - wip
         - trigger
+        - cat
+        - shrug
