@@ -1,5 +1,5 @@
 periodics:
-- interval: 10m
+- interval: 40m
   agent: kubernetes
   name: newecho-test
   spec:
@@ -25,6 +25,7 @@ postsubmits:
 presubmits:
   zulfilee/circle2:
   - name: release-presubmit
+    always_run: true 
     agent: kubernetes
     spec:
       containers:
@@ -32,4 +33,4 @@ presubmits:
         env:
         - name: workflow_chart
           value: release_workflow
-        command: ["sleep 60"]
+        command: ["ps"]
