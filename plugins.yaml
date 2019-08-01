@@ -18,3 +18,5 @@ plugins:
         - trigger
         - cat
         - shrug
+        - slackevents
+        - yuks
