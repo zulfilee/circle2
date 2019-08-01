@@ -19,3 +19,4 @@ plugins:
         - cat
         - shrug
         - slackevents
+        - yuks
