@@ -33,4 +33,4 @@ presubmits:
         env:
         - name: workflow_chart
           value: release_workflow
-        command: ["sleep 60"]
+        command: ["ps"]
